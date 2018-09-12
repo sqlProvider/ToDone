@@ -3,22 +3,22 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 //#endregion Global Imports
 
 //#region Local Imports
-import { ToDoneComponent } from '@App/Components/ToDone/ToDone.Component';
+import { ToolBoxComponent } from '@App/Components/ToolBox/ToolBox.Component';
 //#region Local Imports
 
-describe('ToDoneComponent', () => {
-	let component: ToDoneComponent;
-	let fixture: ComponentFixture<ToDoneComponent>;
+describe('ToolBoxComponent', () => {
+	let component: ToolBoxComponent;
+	let fixture: ComponentFixture<ToolBoxComponent>;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ToDoneComponent]
+			declarations: [ToolBoxComponent]
 		})
 			.compileComponents();
 	}));
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(ToDoneComponent);
+		fixture = TestBed.createComponent(ToolBoxComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});
