@@ -1,0 +1,64 @@
+@import './Colors.scss';
+
+#DesignEntrypoint {
+	max-width: 400px;
+	border-radius: 4px;
+	background: GetColor(BackGround, P100);
+
+	header {
+		height: 80px;
+		padding-left: 10px;
+
+		div {
+			font-size: 50px;
+			line-height: 80px;
+			overflow: hidden;
+
+			&.logo-to {
+				color: GetColor(ForeGround, P100);
+
+				width: 26px;
+				letter-spacing: 10px;
+
+				:host .pageLoaded & {
+					width: 50px;
+					letter-spacing: 0;
+					animation: 2s logo-to-animate;
+					@keyframes logo-to-animate {
+						from {
+							width: 26px;
+							letter-spacing: 10px;
+						}
+						to {
+							width: 50px;
+							letter-spacing: 0;
+						}
+					}
+				}
+			}
+
+			&.logo-done {
+				color: GetColor(ForeGround, P200);
+
+				width: 35px;
+				letter-spacing: 10px;
+
+				:host .pageLoaded & {
+					width: 135px;
+					letter-spacing: 0;
+					animation: 2s logo-done-animate;
+					@keyframes logo-done-animate {
+						from {
+							width: 35px;
+							letter-spacing: 10px;
+						}
+						to {
+							width: 135px;
+							letter-spacing: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

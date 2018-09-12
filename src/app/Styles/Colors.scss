@@ -1,0 +1,60 @@
+/*
+ * Theme Color Palette
+**/
+$ColorPalette: (
+	ForeGround: (
+		// Primary
+		P100: #D32F2F,
+		P200: #F0F0F0,
+
+		// Inverted
+		I100: #263238,
+	),
+	BackGround: (
+		// Primary
+		P100: #263238,
+
+		// Inverted
+		I100: #FFF,
+
+	),
+	Overlay: (
+		// Transparent
+		P000: transparent,
+		T000: rgba(0, 0, 0, 0.0),
+		// Dark Overlays
+		D100: rgba(0, 0, 0, 0.1),
+		D200: rgba(0, 0, 0, 0.2),
+		D300: rgba(0, 0, 0, 0.3),
+		D400: rgba(0, 0, 0, 0.4),
+		D500: rgba(0, 0, 0, 0.5),
+		D600: rgba(0, 0, 0, 0.6),
+		D700: rgba(0, 0, 0, 0.7),
+		D800: rgba(0, 0, 0, 0.8),
+		D900: rgba(0, 0, 0, 0.9),
+		// Light Overlays
+		L100: rgba(255, 255, 255, 0.1),
+		L200: rgba(255, 255, 255, 0.2),
+		L300: rgba(255, 255, 255, 0.3),
+		L400: rgba(255, 255, 255, 0.4),
+		L500: rgba(255, 255, 255, 0.5),
+		L600: rgba(255, 255, 255, 0.6),
+		L700: rgba(255, 255, 255, 0.7),
+		L800: rgba(255, 255, 255, 0.8),
+		L900: rgba(255, 255, 255, 0.9)
+
+	)
+);
+
+/*
+ * @GetColor function for using color palette
+**/
+@function GetColor($colorPalette, $colorKey) {
+	$selectedColorPalette: map-get($ColorPalette, $colorPalette);
+	@if isMap($selectedColorPalette) {
+		@return map-get($selectedColorPalette, $colorKey);
+	}
+	@else {
+		@error 'Wrong color palette key => ' #{$colorPalette}
+	}
+}
