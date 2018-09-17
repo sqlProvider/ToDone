@@ -12,6 +12,7 @@ import { AppRoutingModule } from '@App/Route/Routing.Module';
 //#region Component Imports
 import { InputBoxComponent } from '@App/Components/InputBox/InputBox.Component';
 import { ListComponent } from '@App/Components/List/List.Component';
+import { ListItemComponent } from '@App/Components/ListItem/ListItem.Component';
 import { ToDoneComponent } from '@App/Components/ToDone/ToDone.Component';
 import { RootComponent } from '@App/Layout/Root/Root.Component';
 //#region Component Imports
@@ -33,7 +34,8 @@ import { ToDoneStore } from '@App/app.module.reducer';
 		 */
 		ToDoneComponent,
 		InputBoxComponent,
-		ListComponent
+		ListComponent,
+		ListItemComponent
 	],
 	imports: [
 		/**

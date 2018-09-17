@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
 //#endregion Local Imports
 
 @Component({
-	selector: 'app-list',
-	styleUrls: ['./List.Component.scss'],
-	templateUrl: './List.Component.html',
+	selector: 'app-list-item',
+	styleUrls: ['./ListItem.Component.scss'],
+	templateUrl: './ListItem.Component.html'
 })
-export class ListComponent implements OnInit {
+export class ListItemComponent implements OnInit {
 
 	constructor() { }
 
