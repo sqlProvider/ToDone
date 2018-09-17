@@ -6,7 +6,6 @@ import { StoreModule } from '@ngrx/store';
 //#region Global Imports
 
 //#region Local Imports
-import { AppRoutingModule } from '@App/Route/Routing.Module';
 //#region Local Imports
 
 //#region Component Imports
@@ -48,7 +47,6 @@ import { ToDoneStore } from '@App/app.module.reducer';
 		/**
 		 * Local Modules
 		 */
-		AppRoutingModule
 	],
 	providers: [
 		ToDoneStore.ReducerProvider
