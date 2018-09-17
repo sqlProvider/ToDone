@@ -10,13 +10,14 @@ import { AppRoutingModule } from '@App/Route/Routing.Module';
 //#region Local Imports
 
 //#region Component Imports
+import { InputBoxComponent } from '@App/Components/InputBox/InputBox.Component';
+import { ListComponent } from '@App/Components/List/List.Component';
 import { ToDoneComponent } from '@App/Components/ToDone/ToDone.Component';
 import { RootComponent } from '@App/Layout/Root/Root.Component';
 //#region Component Imports
 
 //#region Store Imports
 import { ToDoneStore } from '@App/app.module.reducer';
-import { InputBoxComponent } from '@App/Components/InputBox/InputBox.Component';
 //#region Store Imports
 
 @NgModule({
@@ -32,6 +33,7 @@ import { InputBoxComponent } from '@App/Components/InputBox/InputBox.Component';
 		 */
 		ToDoneComponent,
 		InputBoxComponent,
+		ListComponent
 	],
 	imports: [
 		/**
