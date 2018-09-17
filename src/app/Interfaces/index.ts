@@ -4,6 +4,7 @@ export * from '@App/Layout/Root/Root.Component.d';
 
 //#region Components Exports
 export * from '@App/Components/ToDone/ToDone.Component.d';
+export * from '@App/Components/InputBox/InputBox.Component.d';
 //#endregion Components Exports
 
 //#region Services Exports

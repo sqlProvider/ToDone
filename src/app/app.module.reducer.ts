@@ -4,12 +4,14 @@ import { ActionReducerMap, combineReducers } from '@ngrx/store';
 //#endregion Global Imports
 
 //#region Local Imports
+import { InputBoxReducer } from '@App/Components/InputBox/InputBox.S.Reducer';
 import { ToDoneReducer } from '@App/Components/ToDone/ToDone.S.Reducer';
 import { IStore } from '@App/Interfaces';
 //#endregion Local Imports
 
 export module ToDoneStore {
 	export const Reducers = combineReducers({
+		InputBox: InputBoxReducer,
 		ToDone: ToDoneReducer
 	});
 

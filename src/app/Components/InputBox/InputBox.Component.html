@@ -5,11 +5,24 @@
 					<input
 						type="text"
 						placeholder="Type Here"
+						[(ngModel)]="entry"
+						(keyup)="onChangeEntry($event)"
+						maxlength="{{ maxEntryLength }}"
 					/>
+
+					<div class="limit">
+						{{ entryLength }}/{{ maxEntryLength }}
+					</div>
+
+					<div class="limit red" [ngStyle]="{'opacity' : entryLength / maxEntryLength}">
+						{{ entryLength }}/{{ maxEntryLength }}
+					</div>
 			</div>
 		</div>
-		<div class="col">
-
+		<div
+			class="col"
+			(click)="createNewEntry()"
+			[ngClass]="{'disabled': entryLength === 0}">
 		</div>
 	</div>
 </section>

@@ -13,6 +13,8 @@
 		margin: 0;
 
 		> .col:first-child {
+			position: relative;
+
 			input {
 				height: 50px;
 				width: 100%;
@@ -31,6 +33,18 @@
 					font-style: italic;
 				}
 			}
+
+			.limit {
+				position: absolute;
+				right: 3px;
+				bottom: 0;
+				font-size: 10px;
+				color: GetColor(ForeGround, I100);
+
+				&.red {
+					color: GetColor(ForeGround, P300);
+				}
+			}
 		}
 
 		> .col:last-child {
@@ -43,7 +57,12 @@
 			border-top-right-radius: 4px;
 			border-bottom-right-radius: 4px;
 
+			transition: background-color .2s ease-out;
 			cursor: pointer;
+
+			&.disabled {
+				background-color: lighten($color: GetColor(BackGround, P200), $amount: 20%);
+			}
 		}
 	}
 }
