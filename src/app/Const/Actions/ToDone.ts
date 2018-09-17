@@ -3,5 +3,6 @@
  */
 
 export let ToDone = {
-	ChangeLoading: '[ToDoneActions] ChangeLoading',
+	ChangeActiveTypeFilter: '[ToDoneActions] ChangeActiveTypeFilter',
+	ChangeLoading: '[ToDoneActions] ChangeLoading'
 };
