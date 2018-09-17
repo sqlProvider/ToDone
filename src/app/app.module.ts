@@ -16,7 +16,6 @@ import { RootComponent } from '@App/Layout/Root/Root.Component';
 
 //#region Store Imports
 import { ToDoneStore } from '@App/app.module.reducer';
-import { ToolBoxComponent } from '@App/Components/ToolBox/ToolBox.Component';
 //#region Store Imports
 
 @NgModule({
@@ -31,7 +30,6 @@ import { ToolBoxComponent } from '@App/Components/ToolBox/ToolBox.Component';
 		 * Component Declarations
 		 */
 		ToDoneComponent,
-		ToolBoxComponent
 	],
 	imports: [
 		/**
