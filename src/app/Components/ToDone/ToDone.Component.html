@@ -8,11 +8,11 @@
 						<div class="logo-done">DONE</div>
 					</header>
 
-					<aside class="row">
+					<aside class="row" [ngClass]="(state | async).activeTypeFilter.toLowerCase()">
 						<ul class="col">
-							<li>ALL</li>
-							<li>ACTIVE</li>
-							<li>COMPLETED</li>
+							<li (click)="applyTypeFilter(TypeFilters.All)">ALL</li>
+							<li (click)="applyTypeFilter(TypeFilters.Active)">ACTIVE</li>
+							<li (click)="applyTypeFilter(TypeFilters.Completed)">COMPLETED</li>
 						</ul>
 					</aside>
 				</div>

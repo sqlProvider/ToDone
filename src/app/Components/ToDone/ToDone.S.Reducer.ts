@@ -4,20 +4,28 @@
 
 //#region Local Imports
 import { ToDoneActions } from '@App/Components/ToDone/ToDone.S.Actions';
-import { Const } from '@App/Const';
+import { Actions, TypeFilters } from '@App/Const';
 import { IToDone } from '@App/Interfaces';
 //#endregion Local Imports
 
 const InitialState: IToDone.IState = {
+	activeTypeFilter: TypeFilters.All,
 	isComponentOK: false
 };
 
 export const RootReducer = (state: IToDone.IState = InitialState, action: ToDoneActions): IToDone.IState => {
 	switch (action.type) {
-		case Const.Actions.ToDone.ChangeLoading:
+		case Actions.ToDone.ChangeLoading:
 			return {
 				...state,
-				isComponentOK: action.payload
+				isComponentOK: action.payload as boolean
+			};
+
+		case Actions.ToDone.ChangeActiveTypeFilter:
+			return {
+				...state,
+				activeTypeFilter: action.payload as TypeFilters
+
 			};
 
 		default:

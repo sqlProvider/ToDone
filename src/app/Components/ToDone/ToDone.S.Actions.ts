@@ -3,13 +3,19 @@ import { Action } from '@ngrx/store';
 //#endregion Global Imports
 
 //#region Local Imports
-import { Const } from '@App/Const';
+import { Actions, TypeFilters } from '@App/Const';
 //#endregion Local Imports
 
 export class ChangeLoading implements Action {
-	public readonly type = Const.Actions.ToDone.ChangeLoading;
+	public readonly type = Actions.ToDone.ChangeLoading;
 	constructor(public payload: boolean) {}
 }
 
+export class ChangeActiveTypeFilter implements Action {
+	public readonly type = Actions.ToDone.ChangeActiveTypeFilter;
+	constructor(public payload: TypeFilters) {}
+}
+
 export type ToDoneActions =
-	ChangeLoading;
+	ChangeLoading |
+	ChangeActiveTypeFilter;

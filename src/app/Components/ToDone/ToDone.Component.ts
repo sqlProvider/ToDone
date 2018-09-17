@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 
 //#region Local Imports
 import * as ToDoneActions from '@App/Components/ToDone/ToDone.S.Actions';
+import { TypeFilters } from '@App/Const';
 import { IStore, IToDone } from '@App/Interfaces';
 //#endregion Local Imports
 
@@ -16,6 +17,7 @@ import { IStore, IToDone } from '@App/Interfaces';
 })
 export class ToDoneComponent implements AfterViewInit, OnInit {
 	public state: Observable<IToDone.IState>;
+	public TypeFilters = TypeFilters;
 
 	constructor(
 		private store: Store<IStore>
@@ -33,5 +35,9 @@ export class ToDoneComponent implements AfterViewInit, OnInit {
 		setTimeout(() => {
 			this.store.dispatch(new ToDoneActions.ChangeLoading(true));
 		}, 0);
+	}
+
+	public applyTypeFilter(filter: TypeFilters) {
+		this.store.dispatch(new ToDoneActions.ChangeActiveTypeFilter(filter));
 	}
 }

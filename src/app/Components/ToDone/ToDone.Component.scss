@@ -118,5 +118,17 @@
 				}
 			}
 		}
+
+		&.all ul li:nth-child(1) {
+			background: GetColor(Overlay, L200);
+		}
+
+		&.active ul li:nth-child(2) {
+			background: GetColor(Overlay, L200);
+		}
+
+		&.completed ul li:nth-child(3) {
+			background: GetColor(Overlay, L200);
+		}
 	}
 }
