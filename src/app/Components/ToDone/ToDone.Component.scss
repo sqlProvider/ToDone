@@ -1,13 +1,18 @@
 @import './Colors.scss';
 
 #DesignEntrypoint {
-	max-width: 400px;
+	max-width: 600px;
 	border-radius: 4px;
 	background: GetColor(BackGround, P100);
 
+	> .row > .col:first-child {
+		max-width: 220px;
+		border-right: 1px solid GetColor(Overlay, L300);
+	}
+
 	header {
 		height: 80px;
-		padding-left: 10px;
+		padding: 0 15px;
 
 		div {
 			font-size: 50px;
@@ -15,7 +20,7 @@
 			overflow: hidden;
 
 			&.logo-to {
-				color: GetColor(ForeGround, P100);
+				color: GetColor(ForeGround, P200);
 
 				width: 26px;
 				letter-spacing: 10px;
@@ -23,13 +28,17 @@
 				:host .pageLoaded & {
 					width: 50px;
 					letter-spacing: 0;
-					animation: 2s logo-to-animate;
+					animation: 4s logo-to-animate;
 					@keyframes logo-to-animate {
-						from {
+						0% {
 							width: 26px;
 							letter-spacing: 10px;
 						}
-						to {
+						50% {
+							width: 26px;
+							letter-spacing: 10px;
+						}
+						100% {
 							width: 50px;
 							letter-spacing: 0;
 						}
@@ -38,7 +47,7 @@
 			}
 
 			&.logo-done {
-				color: GetColor(ForeGround, P200);
+				color: GetColor(ForeGround, P100);
 
 				width: 35px;
 				letter-spacing: 10px;
@@ -46,17 +55,66 @@
 				:host .pageLoaded & {
 					width: 135px;
 					letter-spacing: 0;
-					animation: 2s logo-done-animate;
+					animation: 4s logo-done-animate;
 					@keyframes logo-done-animate {
-						from {
+						0% {
 							width: 35px;
 							letter-spacing: 10px;
 						}
-						to {
+						50% {
+							width: 35px;
+							letter-spacing: 10px;
+						}
+						100% {
 							width: 135px;
 							letter-spacing: 0;
 						}
 					}
+				}
+			}
+		}
+	}
+
+	aside {
+		ul {
+			list-style: none;
+			padding: 0;
+
+			li {
+				position: relative;
+				height: 30px;
+				line-height: 30px;
+				padding: 0 15px 0 30px;
+
+				font-size: 16px;
+				color: GetColor(ForeGround, P100);
+
+				transition: background-color .4s ease-out;
+				cursor: pointer;
+
+
+				&:hover {
+					background: GetColor(Overlay, L200);
+				}
+
+				&:before {
+					content: "";
+					width: 8px;
+					height: 8px;
+
+					position: absolute;
+					left: 15px;
+					top: 11px;
+
+					border-radius: 100%;
+					background: GetColor(BackGround, I100);;
+				}
+
+				&:nth-child(2):before {
+					background: GetColor(BackGround, P300);
+				}
+				&:nth-child(3):before {
+					background: GetColor(BackGround, P200);
 				}
 			}
 		}

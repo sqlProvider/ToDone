@@ -1,18 +1,25 @@
 <section id="ToDone" class="container h-100" [ngClass]="{'pageLoaded' : (state | async).isComponentOK}">
 	<div class="row justify-content-center align-items-center h-100">
 		<div id="DesignEntrypoint" class="col">
-			<header class="row">
-				<div class="logo-to">To</div>
-				<div class="logo-done">DONE</div>
-			</header>
+			<div class="row">
+				<div class="col">
+					<header class="row">
+						<div class="logo-to">To</div>
+						<div class="logo-done">DONE</div>
+					</header>
 
-			<section class="list row">
+					<aside class="row">
+						<ul class="col">
+							<li>ALL</li>
+							<li>ACTIVE</li>
+							<li>COMPLETED</li>
+						</ul>
+					</aside>
+				</div>
+				<div class="col">
 
-			</section>
-
-			<section class="tool-box">
-				<app-tool-box></app-tool-box>
-			</section>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
