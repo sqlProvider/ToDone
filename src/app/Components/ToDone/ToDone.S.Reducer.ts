@@ -13,7 +13,7 @@ const InitialState: IToDone.IState = {
 	isComponentOK: false
 };
 
-export const RootReducer = (state: IToDone.IState = InitialState, action: ToDoneActions): IToDone.IState => {
+export const ToDoneReducer = (state: IToDone.IState = InitialState, action: ToDoneActions): IToDone.IState => {
 	switch (action.type) {
 		case Actions.ToDone.ChangeLoading:
 			return {
