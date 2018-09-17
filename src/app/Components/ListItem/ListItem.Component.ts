@@ -11,10 +11,12 @@ import { Component, OnInit } from '@angular/core';
 	templateUrl: './ListItem.Component.html'
 })
 export class ListItemComponent implements OnInit {
-
+	public rng: boolean;
 	constructor() { }
 
 	public ngOnInit() {
+		console.log(Math.random());
+		this.rng = Math.random() > 0.5 ? false : true;
 	}
 
 }

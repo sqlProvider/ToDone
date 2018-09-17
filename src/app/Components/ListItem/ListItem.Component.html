@@ -1,3 +1,16 @@
-<p>
-	list-item works!
-</p>
+<section class="container list-item" [ngClass]="{'active' : rng, 'completed' : !rng}">
+	<div class="row">
+		<div class="col">
+			<div class="check"></div>
+
+			<p>
+				Lorem ipsum dolor sit amet.
+			</p>
+
+			<div class="tool-box">
+				<div class="button delete"></div>
+				<div class="button edit"></div>
+			</div>
+		</div>
+	</div>
+</section>

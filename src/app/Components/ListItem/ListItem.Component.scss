@@ -1,0 +1,111 @@
+@import './Colors.scss';
+
+:host {
+	flex-grow: 1;
+}
+
+
+.list-item {
+	overflow: hidden;
+	border-radius: 4px;
+	margin-bottom: 1px;
+
+	cursor: pointer;
+
+	.row {
+
+		.col {
+			position: relative;
+			height: 30px;
+			line-height: 30px;
+
+			background: GetColor(Overlay, L200);
+			color: GetColor(ForeGround, P100);
+
+			.check {
+				position: absolute;
+				width: 6px;
+				height: 6px;
+				left: 15px;
+				top: 12px;
+				border: 1px solid;
+				border-radius: 100%;
+				transition: all .2s ease-out;
+			}
+
+			p {
+				margin: 0;
+				padding: 0;
+				padding-left: 15px;
+			}
+
+			.tool-box {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 80px;
+				height: 30px;
+				background-image: linear-gradient(to left, GetColor(Overlay, L200), transparent);
+				opacity: 0;
+				transition: opacity .4s ease-out;
+
+				.button {
+					width: 30px;
+					height: 30px;
+					float: right;
+					background-size: 50%;
+					background-repeat: no-repeat;
+					background-position: center;
+
+					&.delete {
+						background-image: url(/assets/delete.svg);
+						background-color: GetColor(BackGround, P300);
+					}
+
+					&.edit {
+						background-image: url(/assets/edit.svg);
+						background-color: GetColor(BackGround, P200);
+					}
+				}
+			}
+
+			&:hover {
+
+				.check {
+					background-color: transparent !important;
+					width: 14px;
+					height: 14px;
+					top: 8px;
+					left: 10px;
+					border-radius: 4px;
+				}
+
+				.tool-box {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&.completed {
+		.row .col {
+			background: GetColor(Overlay, L100);
+
+			.check {
+				background: GetColor(BackGround, P200);
+				border-color: GetColor(BackGround, P200);
+			}
+		}
+	}
+
+	&.active {
+		.row .col {
+			background: GetColor(Overlay, L200);
+
+			.check {
+				background: GetColor(BackGround, P300);
+				border-color: GetColor(BackGround, P300);
+			}
+		}
+	}
+}
