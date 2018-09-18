@@ -34,6 +34,7 @@ export class ToDoneComponent implements AfterViewInit, OnInit {
 		 */
 		setTimeout(() => {
 			this.store.dispatch(new ToDoneActions.ChangeLoading(true));
+			this.store.dispatch(new ToDoneActions.FetchTodos());
 		}, 0);
 	}
 

@@ -1,8 +1,10 @@
+//#region Local Imports
+import { TypeFilters } from '@App/Const';
+//#region Local Imports
+
 /**
  * @module @interface IToDone
 */
-import { TypeFilters } from '@App/Const';
-
 export module IToDone {
 	export interface IState {
 		activeTypeFilter: TypeFilters;

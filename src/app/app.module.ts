@@ -20,6 +20,7 @@ import { RootComponent } from '@App/Layout/Root/Root.Component';
 
 //#region Store Imports
 import { ToDoneStore } from '@App/app.module.reducer';
+import { ToDoneEffects } from '@App/Components/ToDone/ToDone.S.Effects';
 //#region Store Imports
 
 @NgModule({
@@ -46,7 +47,9 @@ import { ToDoneStore } from '@App/app.module.reducer';
 		HttpClientModule,
 		FormsModule,
 		StoreModule.forRoot(ToDoneStore.REDUCER_TOKEN),
-		EffectsModule.forRoot([ ]),
+		EffectsModule.forRoot([
+			ToDoneEffects
+		]),
 
 		/**
 		 * Local Modules
