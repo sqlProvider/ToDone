@@ -1,7 +1,29 @@
+@import './Colors.scss';
+
 :host {
 	flex-grow: 1;
 }
 
 #List {
 	padding-bottom: 15px;
+	height: 500px;
+	max-height: 500px;
+	overflow: auto;
+	padding-right: 10px;
+
+	&:hover {
+		&::-webkit-scrollbar-thumb {
+			background-color: GetColor(Overlay, L400);
+		}
+	}
+
+	&::-webkit-scrollbar {
+		width: 5px;
+		background-color: GetColor(BackGround, P100);
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: GetColor(Overlay, L100);
+		border-radius: 100%;
+	}
 }
