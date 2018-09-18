@@ -1,10 +1,10 @@
-<section class="container list-item" [ngClass]="{'active' : rng, 'completed' : !rng}">
+<section class="container list-item" [ngClass]="{'active' : !todo.completed, 'completed' : todo.completed}">
 	<div class="row">
 		<div class="col">
 			<div class="check"></div>
 
 			<p>
-				Lorem ipsum dolor sit amet.
+				{{ todo.title }}
 			</p>
 
 			<div class="tool-box">

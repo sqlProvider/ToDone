@@ -1,5 +1,5 @@
 //#region Global Imports
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 //#endregion Global Imports
 
 //#region Local Imports
@@ -11,12 +11,11 @@ import { Component, OnInit } from '@angular/core';
 	templateUrl: './ListItem.Component.html'
 })
 export class ListItemComponent implements OnInit {
-	public rng: boolean;
+	@Input() public todo: Object;
+
 	constructor() { }
 
 	public ngOnInit() {
-		console.log(Math.random());
-		this.rng = Math.random() > 0.5 ? false : true;
 	}
 
 }
