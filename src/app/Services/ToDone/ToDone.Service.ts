@@ -1,8 +1,10 @@
 //#region Global Imports
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 //#endregion Global Imports
 
 //#region Local Imports
+import { IToDoneService } from '@App/Interfaces';
 import { HTTPService } from '@App/Services/HTTP/HTTP.Service';
 //#endregion Local Imports
 
@@ -15,7 +17,7 @@ export class ToDoneService {
 		private httpService: HTTPService
 	) { }
 
-	public Fetch() {
-		return this.httpService.Get('users/1/todos');
+	public FetchTodos(): Observable<IToDoneService.IFetchTodosResponse> {
+		return this.httpService.Get<IToDoneService.IFetchTodosResponse>('users/1/todos');
 	}
 }
