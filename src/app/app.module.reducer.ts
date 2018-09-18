@@ -5,6 +5,7 @@ import { ActionReducerMap, combineReducers } from '@ngrx/store';
 
 //#region Local Imports
 import { InputBoxReducer } from '@App/Components/InputBox/InputBox.S.Reducer';
+import { ListReducer } from '@App/Components/List/List.S.Reducer';
 import { ToDoneReducer } from '@App/Components/ToDone/ToDone.S.Reducer';
 import { IStore } from '@App/Interfaces';
 //#endregion Local Imports
@@ -12,6 +13,7 @@ import { IStore } from '@App/Interfaces';
 export module ToDoneStore {
 	export const Reducers = combineReducers({
 		InputBox: InputBoxReducer,
+		List: ListReducer,
 		ToDone: ToDoneReducer
 	});
 
