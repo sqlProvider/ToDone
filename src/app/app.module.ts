@@ -1,4 +1,5 @@
 //#region Global Imports
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -42,6 +43,7 @@ import { ToDoneStore } from '@App/app.module.reducer';
 		 * Global Modules
 		 */
 		BrowserModule,
+		HttpClientModule,
 		FormsModule,
 		StoreModule.forRoot(ToDoneStore.REDUCER_TOKEN),
 		EffectsModule.forRoot([ ]),
