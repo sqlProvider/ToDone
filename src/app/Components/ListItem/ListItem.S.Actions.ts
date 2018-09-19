@@ -12,5 +12,17 @@ export class ChangeComplete implements Action {
 	constructor(public payload: IToDoneProperty) { }
 }
 
+export class ChangeCompleteSuccess implements Action {
+	public readonly type = Actions.ListItem.ChangeCompleteSuccess;
+	constructor(public payload: IToDoneProperty) { }
+}
+
+export class ChangeCompleteError implements Action {
+	public readonly type = Actions.ListItem.ChangeCompleteError;
+	constructor(public payload: IToDoneProperty) { }
+}
+
 export type ListItemActions =
-	ChangeComplete;
+	ChangeComplete |
+	ChangeCompleteSuccess |
+	ChangeCompleteError;
