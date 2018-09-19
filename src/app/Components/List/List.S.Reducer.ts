@@ -27,6 +27,12 @@ export const ListReducer = (state: IList.IState = InitialState, action: ToDoneAc
 				activeFilter: action.payload
 			};
 
+		case Actions.InputBox.CreateNewEntrySuccess:
+			return {
+				...state,
+				todos: [action.payload].concat(state.todos)
+			};
+
 		default:
 			return state;
 	}
