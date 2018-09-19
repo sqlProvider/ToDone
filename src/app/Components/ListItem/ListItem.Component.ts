@@ -1,8 +1,11 @@
 //#region Global Imports
 import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 //#endregion Global Imports
 
 //#region Local Imports
+import * as ListItemActions from '@App/Components/ListItem/ListItem.S.Actions';
+import { IStore, IToDoneProperty } from '@App/Interfaces';
 //#endregion Local Imports
 
 @Component({
@@ -11,12 +14,21 @@ import { Component, Input, OnInit } from '@angular/core';
 	templateUrl: './ListItem.Component.html'
 })
 export class ListItemComponent implements OnInit {
-	@Input() public todo: Object;
+	@Input() public todo: IToDoneProperty;
 	@Input() public placeholder: boolean;
 
-	constructor() { }
+	constructor(private store: Store<IStore>) { }
 
 	public ngOnInit() {
+	}
+
+	public onComplateChanged() {
+		this.store.dispatch(new ListItemActions.ComplateChanged({
+			complated: !this.todo.completed,
+			id: this.todo.id
+		}));
+
+		this.todo.completed = !this.todo.completed;
 	}
 
 }
