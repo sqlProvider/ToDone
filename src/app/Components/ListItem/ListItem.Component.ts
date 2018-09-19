@@ -12,6 +12,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ListItemComponent implements OnInit {
 	@Input() public todo: Object;
+	@Input() public placeholder: boolean;
 
 	constructor() { }
 
