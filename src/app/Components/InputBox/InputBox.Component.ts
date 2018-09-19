@@ -35,6 +35,8 @@ export class InputBoxComponent implements OnInit {
 			title: this.entry,
 			userId: 1
 		}));
+
+		this.entry = '';
 	}
 
 	public onChangeEntry(event: KeyboardEvent) {
