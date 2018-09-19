@@ -21,6 +21,7 @@ import { RootComponent } from '@App/Layout/Root/Root.Component';
 //#region Store Imports
 import { ToDoneStore } from '@App/app.module.reducer';
 import { ToDoneEffects } from '@App/Components/ToDone/ToDone.S.Effects';
+import { TodoStatusPipe } from './Pipes/TodoStatus/TodoStatus.Pipe';
 //#region Store Imports
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ToDoneEffects } from '@App/Components/ToDone/ToDone.S.Effects';
 		ToDoneComponent,
 		InputBoxComponent,
 		ListComponent,
-		ListItemComponent
+		ListItemComponent,
+		TodoStatusPipe
 	],
 	imports: [
 		/**
