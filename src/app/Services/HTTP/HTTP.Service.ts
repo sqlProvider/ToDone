@@ -18,4 +18,19 @@ export class HTTPService {
 
 		return this.http.get<T>(`${this.baseHref}${url}`);
 	}
+
+	public Post<T>(url: string, data: Object) {
+		if (url.trim() === '')
+			throw new Error('[HTTPService.Get] => \'url\' parameter must be defined.');
+
+		return this.http.post<T>(
+			`${this.baseHref}${url}`,
+			JSON.stringify(data),
+			{
+				headers: {
+					'Content-type': 'application/json; charset=UTF-8'
+				}
+			}
+		);
+	}
 }
