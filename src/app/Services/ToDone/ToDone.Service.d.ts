@@ -11,4 +11,5 @@ import { IToDoneProperty } from '@App/Interfaces';
  */
 export module IToDoneService {
 	export interface IFetchTodosResponse extends Array<IToDoneProperty> {}
+	export interface ICreateNewEntryResponse extends IToDoneProperty {}
 }

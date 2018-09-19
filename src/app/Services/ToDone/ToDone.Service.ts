@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 //#endregion Global Imports
 
 //#region Local Imports
-import { IToDoneService } from '@App/Interfaces';
+import { IToDoneProperty, IToDoneService } from '@App/Interfaces';
 import { HTTPService } from '@App/Services/HTTP/HTTP.Service';
 //#endregion Local Imports
 
@@ -19,5 +19,9 @@ export class ToDoneService {
 
 	public FetchTodos(): Observable<IToDoneService.IFetchTodosResponse> {
 		return this.httpService.Get<IToDoneService.IFetchTodosResponse>('users/1/todos');
+	}
+
+	public CreateNewEntry(data: IToDoneProperty): Observable<IToDoneService.ICreateNewEntryResponse> {
+		return this.httpService.Post<IToDoneService.ICreateNewEntryResponse>('todos', data);
 	}
 }
