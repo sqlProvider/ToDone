@@ -3,5 +3,7 @@
  */
 
 export let InputBox = {
-	CreateNewEntry: '[InputBoxActions] CreateNewEntry'
+	CreateNewEntry: '[InputBoxActions] CreateNewEntry',
+	CreateNewEntryError: '[InputBoxActions] CreateNewEntryError',
+	CreateNewEntrySuccess: '[InputBoxActions] CreateNewEntrySuccess',
 };

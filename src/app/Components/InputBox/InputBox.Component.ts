@@ -28,9 +28,13 @@ export class InputBoxComponent implements OnInit {
 	}
 
 	public createNewEntry() {
-		console.log(this.entry);
+		if (this.entry.trim() === '') return;
 
-		this.store.dispatch(new InputBoxActions.CreateNewEntry(this.entry));
+		this.store.dispatch(new InputBoxActions.CreateNewEntry({
+			completed: false,
+			title: this.entry,
+			userId: 1
+		}));
 	}
 
 	public onChangeEntry(event: KeyboardEvent) {
