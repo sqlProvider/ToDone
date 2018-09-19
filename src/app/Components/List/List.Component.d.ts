@@ -9,6 +9,7 @@ import { TypeFilters } from "@App/Const";
 export module IList {
 	export interface IState {
 		activeFilter: TypeFilters;
+		newEntryPlaceholder?: IToDoneProperty;
 		todos: Array<IToDoneProperty>;
 	}
 }
