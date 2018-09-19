@@ -21,9 +21,24 @@ export class HTTPService {
 
 	public Post<T>(url: string, data: Object) {
 		if (url.trim() === '')
-			throw new Error('[HTTPService.Get] => \'url\' parameter must be defined.');
+			throw new Error('[HTTPService.Post] => \'url\' parameter must be defined.');
 
 		return this.http.post<T>(
+			`${this.baseHref}${url}`,
+			JSON.stringify(data),
+			{
+				headers: {
+					'Content-type': 'application/json; charset=UTF-8'
+				}
+			}
+		);
+	}
+
+	public Patch<T>(url: string, data: Object) {
+		if (url.trim() === '')
+			throw new Error('[HTTPService.Patch] => \'url\' parameter must be defined.');
+
+		return this.http.patch<T>(
 			`${this.baseHref}${url}`,
 			JSON.stringify(data),
 			{
