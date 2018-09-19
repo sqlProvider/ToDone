@@ -2,10 +2,15 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import {
+	catchError,
+	map,
+	switchMap
+} from 'rxjs/operators';
 //#endregion Global Imports
 
 //#region Local Imports
+import * as InputBoxActions from '@App/Components/InputBox/InputBox.S.Actions';
 import * as ToDoneActions from '@App/Components/ToDone/ToDone.S.Actions';
 import * as Const from '@App/Const';
 import { ToDoneService } from '@App/Services';
@@ -13,7 +18,10 @@ import { ToDoneService } from '@App/Services';
 
 @Injectable()
 export class ToDoneEffects {
-	constructor(private actions: Actions, private toDoneService: ToDoneService) {}
+	constructor(
+		private actions: Actions,
+		private toDoneService: ToDoneService,
+	) { }
 
 	@Effect()
 	public FetchTodos = this.actions.pipe(
@@ -23,5 +31,17 @@ export class ToDoneEffects {
 			map((payload) => new ToDoneActions.FetchTodosSuccess(payload)),
 			catchError((payload) => of(new ToDoneActions.FetchTodosError(payload)))
 		))
+	);
+
+	@Effect()
+	public CreateNewEntry = this.actions.pipe(
+		map(action => action),
+		ofType(Const.Actions.InputBox.CreateNewEntry),
+			switchMap((action) => {
+				return this.toDoneService.CreateNewEntry((<InputBoxActions.CreateNewEntry>action).payload).pipe(
+					map((payload) => new InputBoxActions.CreateNewEntrySuccess(payload)),
+					catchError((payload) => of(new InputBoxActions.CreateNewEntryError(payload)))
+				);
+		})
 	);
 }
