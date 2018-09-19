@@ -1,4 +1,4 @@
 <section id="List" class="container">
-	<app-list-item *ngFor="let todo of (state | async).todos;" [todo]="todo"></app-list-item>
+	<app-list-item *ngFor="let todo of ((state | async).todos | todoStatus: (state | async).activeFilter);" [todo]="todo"></app-list-item>
 
 </section>
