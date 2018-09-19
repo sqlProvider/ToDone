@@ -31,6 +31,19 @@
 				border: 1px solid;
 				border-radius: 100%;
 				transition: all .2s ease-out;
+
+				&:before {
+					content: "";
+					position: absolute;
+					width: 20px;
+					height: 20px;
+					top: -4px;
+					left: -4px;
+					background: url(/assets/checked.svg) no-repeat;
+					background-size: 100%;
+					transform: scale(0);
+					transition: none;
+				}
 			}
 
 			.loading {
@@ -71,6 +84,7 @@
 				margin: 0;
 				padding: 0;
 				padding-left: 15px;
+				user-select: none;
 			}
 
 			.tool-box {
@@ -128,6 +142,12 @@
 			.check {
 				background: GetColor(BackGround, P200);
 				border-color: GetColor(BackGround, P200);
+			}
+
+			&:hover .check:before{
+				transform: scale(1);
+				top: -4px;
+				left: -4px;
 			}
 		}
 	}
