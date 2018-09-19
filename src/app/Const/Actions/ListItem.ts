@@ -3,5 +3,5 @@
  */
 
 export let ListItem = {
-	ComplateChanged: '[ListItemActions] ComplateChanged',
+	ChangeComplete: '[ListItemActions] ChangeComplete',
 };

@@ -3,13 +3,14 @@ import { Action } from '@ngrx/store';
 //#endregion Global Imports
 
 //#region Local Imports
-import { Actions, TypeFilters } from '@App/Const';
+import { Actions } from '@App/Const';
+import { IToDoneProperty } from '@App/Interfaces';
 //#endregion Local Imports
 
-export class ComplateChanged implements Action {
-	public readonly type = Actions.ListItem.ComplateChanged;
-	constructor(public payload: {id: number, complated: boolean}) { }
+export class ChangeComplete implements Action {
+	public readonly type = Actions.ListItem.ChangeComplete;
+	constructor(public payload: IToDoneProperty) { }
 }
 
 export type ListItemActions =
-	ComplateChanged;
+	ChangeComplete;

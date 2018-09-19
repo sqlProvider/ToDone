@@ -22,10 +22,10 @@ export class ListItemComponent implements OnInit {
 	public ngOnInit() {
 	}
 
-	public onComplateChanged() {
-		this.store.dispatch(new ListItemActions.ComplateChanged({
-			complated: !this.todo.completed,
-			id: this.todo.id
+	public onChangeComplete() {
+		this.store.dispatch(new ListItemActions.ChangeComplete({
+			...this.todo,
+			completed: !this.todo.completed
 		}));
 
 		this.todo.completed = !this.todo.completed;
