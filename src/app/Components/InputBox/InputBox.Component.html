@@ -6,23 +6,22 @@
 						type="text"
 						placeholder="Type Here"
 						[(ngModel)]="entry"
-						(keyup)="onChangeEntry($event)"
 						maxlength="{{ maxEntryLength }}"
 					/>
 
 					<div class="limit">
-						{{ entryLength }}/{{ maxEntryLength }}
+						{{ entry.length }}/{{ maxEntryLength }}
 					</div>
 
-					<div class="limit red" [ngStyle]="{'opacity' : entryLength / maxEntryLength}">
-						{{ entryLength }}/{{ maxEntryLength }}
+					<div class="limit red" [ngStyle]="{'opacity' : entry.length / maxEntryLength}">
+						{{ entry.length }}/{{ maxEntryLength }}
 					</div>
 			</div>
 		</div>
 		<div
 			class="col"
 			(click)="createNewEntry()"
-			[ngClass]="{'disabled': entryLength === 0}">
+			[ngClass]="{'disabled': entry.length === 0}">
 		</div>
 	</div>
 </section>

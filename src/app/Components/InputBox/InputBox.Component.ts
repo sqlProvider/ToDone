@@ -15,7 +15,7 @@ import { IInputBox, IStore } from '@App/Interfaces';
 })
 export class InputBoxComponent implements OnInit {
 	public state: Observable<IInputBox.IState>;
-	public entry: string;
+	public entry = '';
 	public entryLength = 0;
 	public maxEntryLength = 50;
 
@@ -37,13 +37,5 @@ export class InputBoxComponent implements OnInit {
 		}));
 
 		this.entry = '';
-	}
-
-	public onChangeEntry(event: KeyboardEvent) {
-		const target = event.target as HTMLInputElement;
-		const value = target.value;
-		this.entryLength = value.length;
-
-		console.log(target.value, this.entryLength);
 	}
 }
