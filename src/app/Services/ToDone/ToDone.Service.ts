@@ -24,4 +24,8 @@ export class ToDoneService {
 	public CreateNewEntry(data: IToDoneProperty): Observable<IToDoneService.ICreateNewEntryResponse> {
 		return this.httpService.Post<IToDoneService.ICreateNewEntryResponse>('todos', data);
 	}
+
+	public ChangeComplete(data: IToDoneProperty): Observable<IToDoneService.IChangeCompleteResponse> {
+		return this.httpService.Patch<IToDoneService.IChangeCompleteResponse>(`todos/${data.id}`, data);
+	}
 }
