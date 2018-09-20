@@ -14,6 +14,8 @@ const InitialState: IList.IState = {
 };
 
 export const ListReducer = (state: IList.IState = InitialState, action: ToDoneActions): IList.IState => {
+	const todos = state.todos.concat([]);
+
 	switch (action.type) {
 		case Actions.ToDone.FetchTodosSuccess:
 			return {
@@ -41,8 +43,18 @@ export const ListReducer = (state: IList.IState = InitialState, action: ToDoneAc
 			};
 
 		case Actions.ListItem.RemoveTodo:
-			const todos = state.todos.concat([]);
 			todos.splice(action.payload.index, 1);
+
+			return {
+				...state,
+				todos
+			};
+
+		case Actions.InputBox.EditEntrySuccess:
+			console.log('List.S.Reducer', action);
+			const payloadCopy = { ...action.payload };
+			delete payloadCopy.index;
+			todos[action.payload.index] = payloadCopy;
 
 			return {
 				...state,
