@@ -39,4 +39,10 @@ export class ListItemComponent implements OnInit {
 		}));
 	}
 
+	public editTodo() {
+		this.store.dispatch(new ListItemActions.EditTodo({
+			...this.todo,
+			index: this.index
+		}));
+	}
 }

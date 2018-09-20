@@ -37,10 +37,16 @@ export class RemoveTodoError implements Action {
 	constructor() { }
 }
 
+export class EditTodo implements Action {
+	public readonly type = Actions.ListItem.EditTodo;
+	constructor(public payload: IToDonePropertyWithIndex) { }
+}
+
 export type ListItemActions =
 	ChangeComplete |
 	ChangeCompleteSuccess |
 	ChangeCompleteError |
 	RemoveTodo |
 	RemoveTodoSuccess |
-	RemoveTodoError;
+	RemoveTodoError |
+	EditTodo;
