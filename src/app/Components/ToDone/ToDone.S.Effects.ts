@@ -57,4 +57,16 @@ export class ToDoneEffects {
 			);
 		})
 	);
+
+	@Effect()
+	public RemoveTodo = this.actions.pipe(
+		map(action => action),
+		ofType(Const.Actions.ListItem.RemoveTodo),
+		switchMap((action) => {
+			return this.toDoneService.RemoveTodo((<ListITemActions.RemoveTodo>action).payload).pipe(
+				map(() => new ListITemActions.RemoveTodoSuccess()),
+				catchError(() => of(new ListITemActions.RemoveTodoError()))
+			);
+		})
+	);
 }
