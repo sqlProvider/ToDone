@@ -29,12 +29,12 @@ export class RemoveTodo implements Action {
 
 export class RemoveTodoSuccess implements Action {
 	public readonly type = Actions.ListItem.RemoveTodoSuccess;
-	constructor(public payload: IToDoneProperty) { }
+	constructor() { }
 }
 
 export class RemoveTodoError implements Action {
 	public readonly type = Actions.ListItem.RemoveTodoError;
-	constructor(public payload: IToDoneProperty) { }
+	constructor() { }
 }
 
 export type ListItemActions =
