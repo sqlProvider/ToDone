@@ -4,7 +4,7 @@ import { Action } from '@ngrx/store';
 
 //#region Local Imports
 import { Actions } from '@App/Const';
-import { IToDoneProperty } from '@App/Interfaces';
+import { IToDoneProperty, IToDonePropertyWithIndex } from '@App/Interfaces';
 //#endregion Local Imports
 
 export class ChangeComplete implements Action {
@@ -22,7 +22,25 @@ export class ChangeCompleteError implements Action {
 	constructor(public payload: IToDoneProperty) { }
 }
 
+export class RemoveTodo implements Action {
+	public readonly type = Actions.ListItem.RemoveTodo;
+	constructor(public payload: IToDonePropertyWithIndex) { }
+}
+
+export class RemoveTodoSuccess implements Action {
+	public readonly type = Actions.ListItem.RemoveTodoSuccess;
+	constructor(public payload: IToDoneProperty) { }
+}
+
+export class RemoveTodoError implements Action {
+	public readonly type = Actions.ListItem.RemoveTodoError;
+	constructor(public payload: IToDoneProperty) { }
+}
+
 export type ListItemActions =
 	ChangeComplete |
 	ChangeCompleteSuccess |
-	ChangeCompleteError;
+	ChangeCompleteError |
+	RemoveTodo |
+	RemoveTodoSuccess |
+	RemoveTodoError;

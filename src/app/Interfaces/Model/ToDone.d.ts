@@ -4,3 +4,7 @@ export interface IToDoneProperty {
     title: string;
     completed: boolean
 }
+
+export interface IToDonePropertyWithIndex extends IToDoneProperty{
+	index: number;
+}

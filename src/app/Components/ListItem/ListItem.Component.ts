@@ -16,6 +16,7 @@ import { IStore, IToDoneProperty } from '@App/Interfaces';
 export class ListItemComponent implements OnInit {
 	@Input() public todo: IToDoneProperty;
 	@Input() public placeholder: boolean;
+	@Input() public index: number;
 
 	constructor(private store: Store<IStore>) { }
 
@@ -29,6 +30,13 @@ export class ListItemComponent implements OnInit {
 		}));
 
 		this.todo.completed = !this.todo.completed;
+	}
+
+	public removeTodo() {
+		this.store.dispatch(new ListItemActions.RemoveTodo({
+			...this.todo,
+			index: this.index
+		}));
 	}
 
 }

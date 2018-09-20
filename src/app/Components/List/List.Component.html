@@ -1,4 +1,13 @@
 <section id="List" class="container">
-	<app-list-item *ngIf="(state | async).newEntryPlaceholder" [todo]="(state | async).newEntryPlaceholder" [placeholder]="true"></app-list-item>
-	<app-list-item *ngFor="let todo of ((state | async).todos | todoStatus: (state | async).activeFilter);" [todo]="todo"></app-list-item>
+	<app-list-item
+		*ngIf="(state | async).newEntryPlaceholder"
+		[todo]="(state | async).newEntryPlaceholder"
+		[placeholder]="true">
+	</app-list-item>
+
+	<app-list-item
+		*ngFor="let todo of ((state | async).todos | todoStatus: (state | async).activeFilter); index as i"
+		[todo]="todo"
+		[index]="i">
+	</app-list-item>
 </section>
