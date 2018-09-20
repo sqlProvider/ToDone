@@ -51,7 +51,6 @@ export const ListReducer = (state: IList.IState = InitialState, action: ToDoneAc
 			};
 
 		case Actions.InputBox.EditEntrySuccess:
-			console.log('List.S.Reducer', action);
 			const payloadCopy = { ...action.payload };
 			delete payloadCopy.index;
 			todos[action.payload.index] = payloadCopy;
