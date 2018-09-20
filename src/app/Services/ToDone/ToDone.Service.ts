@@ -32,4 +32,8 @@ export class ToDoneService {
 	public RemoveTodo(data: IToDoneProperty): Observable<IToDoneService.IRemoveTodoResponse> {
 		return this.httpService.Delete<IToDoneService.IRemoveTodoResponse>(`todos/${data.id}`);
 	}
+
+	public EditTodo(data: IToDoneProperty): Observable<IToDoneService.IEditTodoResponse> {
+		return this.httpService.Patch<IToDoneService.IEditTodoResponse>(`todos/${data.id}`, data);
+	}
 }

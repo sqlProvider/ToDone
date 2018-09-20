@@ -14,4 +14,5 @@ export module IToDoneService {
 	export interface ICreateNewEntryResponse extends IToDoneProperty {}
 	export interface IChangeCompleteResponse extends IToDoneProperty {}
 	export interface IRemoveTodoResponse {}
+	export interface IEditTodoResponse extends IToDoneProperty {}
 }
