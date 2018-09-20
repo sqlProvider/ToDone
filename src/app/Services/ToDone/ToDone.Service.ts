@@ -28,4 +28,8 @@ export class ToDoneService {
 	public ChangeComplete(data: IToDoneProperty): Observable<IToDoneService.IChangeCompleteResponse> {
 		return this.httpService.Patch<IToDoneService.IChangeCompleteResponse>(`todos/${data.id}`, data);
 	}
+
+	public RemoveTodo(data: IToDoneProperty): Observable<IToDoneService.IRemoveTodoResponse> {
+		return this.httpService.Delete<IToDoneService.IRemoveTodoResponse>(`todos/${data.id}`);
+	}
 }

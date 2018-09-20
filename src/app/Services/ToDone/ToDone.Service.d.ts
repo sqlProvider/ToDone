@@ -13,4 +13,5 @@ export module IToDoneService {
 	export interface IFetchTodosResponse extends Array<IToDoneProperty> {}
 	export interface ICreateNewEntryResponse extends IToDoneProperty {}
 	export interface IChangeCompleteResponse extends IToDoneProperty {}
+	export interface IRemoveTodoResponse {}
 }
