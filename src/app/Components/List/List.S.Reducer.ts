@@ -3,6 +3,8 @@
 //#endregion Global Imports
 
 //#region Local Imports
+import { InputBoxActions } from '@App/Components/InputBox/InputBox.S.Actions';
+import { ListItemActions, RemoveTodo } from '@App/Components/ListItem/ListItem.S.Actions';
 import { ToDoneActions } from '@App/Components/ToDone/ToDone.S.Actions';
 import { Actions, TypeFilters } from '@App/Const';
 import { IList } from '@App/Interfaces';
@@ -13,7 +15,10 @@ const InitialState: IList.IState = {
 	todos: []
 };
 
-export const ListReducer = (state: IList.IState = InitialState, action: ToDoneActions): IList.IState => {
+export const ListReducer = (
+	state: IList.IState = InitialState,
+	action: ToDoneActions | ListItemActions | InputBoxActions): IList.IState => {
+
 	switch (action.type) {
 		case Actions.ToDone.FetchTodosSuccess:
 			return {
@@ -38,6 +43,15 @@ export const ListReducer = (state: IList.IState = InitialState, action: ToDoneAc
 				...state,
 				newEntryPlaceholder: undefined,
 				todos: [action.payload].concat(state.todos)
+			};
+
+		case Actions.ListItem.RemoveTodo:
+			const todos = state.todos.concat([]);
+			todos.splice(action.payload.index, 1);
+
+			return {
+				...state,
+				todos
 			};
 
 		default:
