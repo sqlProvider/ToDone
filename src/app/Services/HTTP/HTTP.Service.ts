@@ -48,4 +48,11 @@ export class HTTPService {
 			}
 		);
 	}
+
+	public Delete<T>(url: string) {
+		if (url.trim() === '')
+			throw new Error('[HTTPService.Delete] => \'url\' parameter must be defined.');
+
+		return this.http.delete<T>(`${this.baseHref}${url}`);
+	}
 }
