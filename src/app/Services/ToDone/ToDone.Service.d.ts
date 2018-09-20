@@ -11,8 +11,7 @@ import { IToDoneProperty, IToDonePropertyWithIndex } from '@App/Interfaces';
  */
 export module IToDoneService {
 	export interface IFetchTodosResponse extends Array<IToDoneProperty> {}
-	export interface ICreateNewEntryResponse extends IToDoneProperty {}
-	export interface IChangeCompleteResponse extends IToDoneProperty {}
-	export interface IRemoveTodoResponse {}
-	export interface IEditTodoResponse extends IToDonePropertyWithIndex {}
+	export interface ICreateResponse extends IToDoneProperty {}
+	export interface IUpdateResponse extends IToDoneProperty {}
+	export interface IRemoveResponse {}
 }

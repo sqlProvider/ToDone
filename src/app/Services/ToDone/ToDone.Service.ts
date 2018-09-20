@@ -21,19 +21,15 @@ export class ToDoneService {
 		return this.httpService.Get<IToDoneService.IFetchTodosResponse>('users/1/todos');
 	}
 
-	public CreateNewEntry(data: IToDoneProperty): Observable<IToDoneService.ICreateNewEntryResponse> {
-		return this.httpService.Post<IToDoneService.ICreateNewEntryResponse>('todos', data);
+	public Create(data: IToDoneProperty): Observable<IToDoneService.ICreateResponse> {
+		return this.httpService.Post<IToDoneService.ICreateResponse>('todos', data);
 	}
 
-	public ChangeComplete(data: IToDoneProperty): Observable<IToDoneService.IChangeCompleteResponse> {
-		return this.httpService.Patch<IToDoneService.IChangeCompleteResponse>(`todos/${data.id}`, data);
+	public Update(data: IToDoneProperty): Observable<IToDoneService.IUpdateResponse> {
+		return this.httpService.Patch<IToDoneService.IUpdateResponse>(`todos/${data.id}`, data);
 	}
 
-	public RemoveTodo(data: IToDoneProperty): Observable<IToDoneService.IRemoveTodoResponse> {
-		return this.httpService.Delete<IToDoneService.IRemoveTodoResponse>(`todos/${data.id}`);
-	}
-
-	public EditTodo(data: IToDoneProperty): Observable<IToDoneService.IEditTodoResponse> {
-		return this.httpService.Patch<IToDoneService.IEditTodoResponse>(`todos/${data.id}`, data);
+	public Remove(data: IToDoneProperty): Observable<IToDoneService.IRemoveResponse> {
+		return this.httpService.Delete<IToDoneService.IRemoveResponse>(`todos/${data.id}`);
 	}
 }

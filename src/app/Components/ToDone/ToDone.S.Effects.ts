@@ -39,7 +39,7 @@ export class ToDoneEffects {
 		map(action => action),
 		ofType(Const.Actions.InputBox.CreateNewEntry),
 		switchMap((action) => {
-			return this.toDoneService.CreateNewEntry((<InputBoxActions.CreateNewEntry>action).payload).pipe(
+			return this.toDoneService.Create((<InputBoxActions.CreateNewEntry>action).payload).pipe(
 				map((payload) => new InputBoxActions.CreateNewEntrySuccess(payload)),
 				catchError((payload) => of(new InputBoxActions.CreateNewEntryError(payload)))
 			);
@@ -51,7 +51,7 @@ export class ToDoneEffects {
 		map(action => action),
 		ofType(Const.Actions.ListItem.ChangeComplete),
 		switchMap((action) => {
-			return this.toDoneService.ChangeComplete((<ListITemActions.ChangeComplete>action).payload).pipe(
+			return this.toDoneService.Update((<ListITemActions.ChangeComplete>action).payload).pipe(
 				map((payload) => new ListITemActions.ChangeCompleteSuccess(payload)),
 				catchError((payload) => of(new ListITemActions.ChangeCompleteError(payload)))
 			);
@@ -63,7 +63,7 @@ export class ToDoneEffects {
 		map(action => action),
 		ofType(Const.Actions.ListItem.RemoveTodo),
 		switchMap((action) => {
-			return this.toDoneService.RemoveTodo((<ListITemActions.RemoveTodo>action).payload).pipe(
+			return this.toDoneService.Remove((<ListITemActions.RemoveTodo>action).payload).pipe(
 				map(() => new ListITemActions.RemoveTodoSuccess()),
 				catchError(() => of(new ListITemActions.RemoveTodoError()))
 			);
@@ -75,8 +75,8 @@ export class ToDoneEffects {
 		map(action => action),
 		ofType(Const.Actions.InputBox.EditEntry),
 		switchMap((action) => {
-			return this.toDoneService.EditTodo((<InputBoxActions.EditEntry>action).payload).pipe(
-				map((payload) => new InputBoxActions.EditEntrySuccess(payload)),
+			return this.toDoneService.Update((<InputBoxActions.EditEntry>action).payload).pipe(
+				map((payload) => new InputBoxActions.EditEntrySuccess({ ...payload, index: (<InputBoxActions.EditEntry>action).payload.index})),
 				catchError(() => of(new InputBoxActions.EditEntryError()))
 			);
 		})
