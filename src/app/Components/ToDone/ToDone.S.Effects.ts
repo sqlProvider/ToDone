@@ -69,4 +69,16 @@ export class ToDoneEffects {
 			);
 		})
 	);
+
+	@Effect()
+	public EditTodo = this.actions.pipe(
+		map(action => action),
+		ofType(Const.Actions.ListItem.EditTodo),
+		switchMap((action) => {
+			return this.toDoneService.EditTodo((<InputBoxActions.EditEntry>action).payload).pipe(
+				map(() => new InputBoxActions.EditEntrySuccess()),
+				catchError(() => of(new InputBoxActions.EditEntryError()))
+			);
+		})
+	);
 }
