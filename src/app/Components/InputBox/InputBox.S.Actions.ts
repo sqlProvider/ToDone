@@ -14,12 +14,12 @@ export class CreateNewEntry implements Action {
 
 export class CreateNewEntrySuccess implements Action {
 	public readonly type = Actions.InputBox.CreateNewEntrySuccess;
-	constructor() {}
+	constructor(public payload: IToDoneProperty) {}
 }
 
 export class CreateNewEntryError implements Action {
 	public readonly type = Actions.InputBox.CreateNewEntryError;
-	constructor() {}
+	constructor(public payload: IToDoneProperty) {}
 }
 
 export class EditEntry implements Action {
@@ -29,7 +29,7 @@ export class EditEntry implements Action {
 
 export class EditEntrySuccess implements Action {
 	public readonly type = Actions.InputBox.EditEntrySuccess;
-	constructor() {}
+	constructor(public payload: IToDonePropertyWithIndex) {}
 }
 
 export class EditEntryError implements Action {

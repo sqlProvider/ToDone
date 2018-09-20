@@ -31,7 +31,8 @@ export class InputBoxComponent implements OnInit {
 		this.state.subscribe((state) => {
 			if (state.editingItem !== undefined) {
 				this.editing = true;
-				this.entry = state.editingItem.title;
+				this.editingItem = state.editingItem;
+				this.entry = this.editingItem.title;
 			}
 		});
 	}
