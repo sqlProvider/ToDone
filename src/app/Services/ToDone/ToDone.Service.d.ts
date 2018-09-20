@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 //#endregion Global Imports
 
 //#region Local Imports
-import { IToDoneProperty } from '@App/Interfaces';
+import { IToDoneProperty, IToDonePropertyWithIndex } from '@App/Interfaces';
 //#endregion Local Imports
 
 /**
@@ -14,5 +14,5 @@ export module IToDoneService {
 	export interface ICreateNewEntryResponse extends IToDoneProperty {}
 	export interface IChangeCompleteResponse extends IToDoneProperty {}
 	export interface IRemoveTodoResponse {}
-	export interface IEditTodoResponse extends IToDoneProperty {}
+	export interface IEditTodoResponse extends IToDonePropertyWithIndex {}
 }
