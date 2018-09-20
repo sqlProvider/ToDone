@@ -4,7 +4,7 @@ import { Action } from '@ngrx/store';
 
 //#region Local Imports
 import { Actions } from '@App/Const';
-import { IToDoneProperty } from '@App/Interfaces';
+import { IToDoneProperty, IToDonePropertyWithIndex } from '@App/Interfaces';
 //#endregion Local Imports
 
 export class CreateNewEntry implements Action {
@@ -14,13 +14,33 @@ export class CreateNewEntry implements Action {
 
 export class CreateNewEntrySuccess implements Action {
 	public readonly type = Actions.InputBox.CreateNewEntrySuccess;
-	constructor(public payload: IToDoneProperty) {}
+	constructor() {}
 }
 
 export class CreateNewEntryError implements Action {
 	public readonly type = Actions.InputBox.CreateNewEntryError;
-	constructor(public payload: IToDoneProperty) {}
+	constructor() {}
+}
+
+export class EditEntry implements Action {
+	public readonly type = Actions.InputBox.EditEntry;
+	constructor(public payload: IToDonePropertyWithIndex) {}
+}
+
+export class EditEntrySuccess implements Action {
+	public readonly type = Actions.InputBox.EditEntrySuccess;
+	constructor() {}
+}
+
+export class EditEntryError implements Action {
+	public readonly type = Actions.InputBox.EditEntryError;
+	constructor() {}
 }
 
 export type InputBoxActions =
-	CreateNewEntry;
+	CreateNewEntry |
+	CreateNewEntrySuccess |
+	CreateNewEntryError |
+	EditEntry |
+	EditEntrySuccess |
+	EditEntryError;
